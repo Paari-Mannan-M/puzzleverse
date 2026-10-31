@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>General Knowledge Quiz | PuzzleVerse</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">PuzzleVerse</div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#games">Games</a></li>
+            </ul>
+
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Quiz Section -->
+    <main class="quiz-page">
+
+        <section class="quiz-container">
+
+            <h1>General Knowledge Quiz</h1>
+
+            <p class="quiz-subtitle">
+                Challenge your knowledge and test your skills!
+            </p>
+
+            <!-- Welcome Screen -->
+            <div id="welcome-screen">
+
+                <h2>Ready to Play?</h2>
+
+                <p>
+                    Answer 10 multiple-choice questions.
+                    You have 15 seconds for each question.
+                </p>
+
+                <button id="start-btn" class="quiz-btn">
+                    Start Quiz
+                </button>
+
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quiz-screen" hidden>
+
+                <div class="quiz-info">
+                    <span id="question-number">Question 1/10</span>
+                    <span id="timer">Time: 15s</span>
+                </div>
+
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+
+                <h2 id="question-text"></h2>
+
+                <div id="options-container"></div>
+
+                <p id="feedback"></p>
+
+                <button id="next-btn" class="quiz-btn" hidden>
+                    Next Question
+                </button>
+
+            </div>
+
+            <!-- Result Screen -->
+            <div id="result-screen" hidden>
+
+                <h2>Quiz Completed!</h2>
+
+                <p id="final-score"></p>
+
+                <p id="result-message"></p>
+
+                <button id="restart-btn" class="quiz-btn">
+                    Restart Quiz
+                </button>
+
+                <br><br>
+
+                <a href="index.html" class="back-link">
+                    Back to Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 PuzzleVerse. Play. Think. Challenge Yourself.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="games/quiz.js"></script>
+
+</body>
+</html>

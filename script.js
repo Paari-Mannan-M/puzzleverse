@@ -1,123 +1,108 @@
-// Select the theme button
+
+// ===================================
+// THEME MANAGEMENT
+// ===================================
+
 const themeButton = document.getElementById("theme-toggle");
 
-// Load saved theme when the website opens
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "light") {
     document.body.classList.add("light-theme");
-    themeButton.textContent = "☀️";
-}
-else {
-    themeButton.textContent = "🌙";
 }
 
-// Theme toggle functionality
-themeButton.addEventListener("click", function () {
+if (themeButton) {
 
-    document.body.classList.toggle("light-theme");
+    themeButton.textContent =
+        document.body.classList.contains("light-theme") ? "☀️" : "🌙";
 
-    // Check the current theme
-    if (document.body.classList.contains("light-theme")) {
+    themeButton.addEventListener("click", function () {
 
-        themeButton.textContent = "☀️";
+        document.body.classList.toggle("light-theme");
 
-        // Save light theme
-        localStorage.setItem("theme", "light");
+        if (document.body.classList.contains("light-theme")) {
+            themeButton.textContent = "☀️";
+            localStorage.setItem("theme", "light");
+        }
+        else {
+            themeButton.textContent = "🌙";
+            localStorage.setItem("theme", "dark");
+        }
 
-    }
-    else {
+    });
 
-        themeButton.textContent = "🌙";
+}
 
-        // Save dark theme
-        localStorage.setItem("theme", "dark");
-
-    }
-
-});
 
 // ===================================
 // GAME SEARCH AND CATEGORY FILTERING
 // ===================================
 
-// Select HTML elements
 const searchInput = document.getElementById("game-search");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const gameCards = document.querySelectorAll(".game-card");
 const noResults = document.getElementById("no-results");
 
-// Store the currently selected category
-let selectedCategory = "all";
+if (searchInput) {
 
-// Function to filter games
-function filterGames() {
+    let selectedCategory = "all";
 
-    // Get search text
-    const searchText = searchInput.value.toLowerCase();
+    function filterGames() {
 
-    // Track visible games
-    let visibleGames = 0;
+        const searchText = searchInput.value.toLowerCase();
 
-    // Check every game card
-    gameCards.forEach(function(card) {
+        let visibleGames = 0;
 
-        const gameName = card.querySelector("h3").textContent.toLowerCase();
-        const gameDescription = card.querySelector("p").textContent.toLowerCase();
-        const gameCategory = card.dataset.category;
+        gameCards.forEach(function(card) {
 
-        // Check search match
-        const matchesSearch =
-            gameName.includes(searchText) ||
-            gameDescription.includes(searchText);
+            const gameName =
+                card.querySelector("h3").textContent.toLowerCase();
 
-        // Check category match
-        const matchesCategory =
-            selectedCategory === "all" ||
-            gameCategory === selectedCategory;
+            const gameDescription =
+                card.querySelector("p").textContent.toLowerCase();
 
-        // Display or hide the card
-        if (matchesSearch && matchesCategory) {
+            const gameCategory = card.dataset.category;
 
-            card.style.display = "block";
-            visibleGames++;
+            const matchesSearch =
+                gameName.includes(searchText) ||
+                gameDescription.includes(searchText);
 
-        } else {
+            const matchesCategory =
+                selectedCategory === "all" ||
+                gameCategory === selectedCategory;
 
-            card.style.display = "none";
+            if (matchesSearch && matchesCategory) {
+                card.style.display = "block";
+                visibleGames++;
+            }
+            else {
+                card.style.display = "none";
+            }
 
-        }
-
-    });
-
-    // Show message if no games are found
-    noResults.hidden = visibleGames !== 0;
-
-}
-
-// Search while typing
-searchInput.addEventListener("input", filterGames);
-
-
-// Category button functionality
-filterButtons.forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        // Remove active class from all buttons
-        filterButtons.forEach(function(btn) {
-            btn.classList.remove("active");
         });
 
-        // Activate clicked button
-        button.classList.add("active");
+        noResults.hidden = visibleGames !== 0;
 
-        // Update selected category
-        selectedCategory = button.dataset.category;
+    }
 
-        // Apply filters
-        filterGames();
+    searchInput.addEventListener("input", filterGames);
+
+    filterButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            filterButtons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            selectedCategory = button.dataset.category;
+
+            filterGames();
+
+        });
 
     });
 
-});
+}
