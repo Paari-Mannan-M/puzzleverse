@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PuzzleVerse | Play. Think. Challenge Yourself.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">PuzzleVerse</div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <main>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to PuzzleVerse</h1>
+
+                <p>
+                    Play. Think. Challenge Yourself.
+                    Explore quizzes and puzzles designed
+                    to challenge your mind.
+                </p>
+
+                <a href="#games" class="start-btn">
+                    Explore Games
+                </a>
+            </div>
+        </section>
+
+        
+<!-- Games Section -->
+<section id="games" class="games-section">
+
+    <h2>Explore Our Games</h2>
+
+    <p class="section-description">
+        Choose your challenge and test your skills.
+    </p>
+
+    <!-- Search Bar -->
+    <input
+        type="text"
+        id="game-search"
+        placeholder="Search your favourite game..."
+    >
+
+    <!-- Category Filters -->
+    <div class="category-filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="puzzle">Puzzles</button>
+        <button class="filter-btn" data-category="quiz">Quizzes</button>
+        <button class="filter-btn" data-category="word">Word Games</button>
+    </div>
+
+    <!-- Games Container -->
+    <div class="games-container">
+
+        <div class="game-card" data-category="puzzle">
+            <h3>Sudoku</h3>
+            <p>Test your logical thinking.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="puzzle">
+            <h3>2048</h3>
+            <p>Combine numbers and reach 2048.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="puzzle">
+            <h3>Number Sequence</h3>
+            <p>Find the missing number.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="word">
+            <h3>Word Search</h3>
+            <p>Find hidden words.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="word">
+            <h3>Word Scramble</h3>
+            <p>Rearrange letters to form words.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="word">
+            <h3>Word Guessing</h3>
+            <p>Guess the hidden word.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="quiz">
+            <h3>General Knowledge Quiz</h3>
+            <p>Challenge your knowledge.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="puzzle">
+            <h3>Memory Match</h3>
+            <p>Test your memory skills.</p>
+            <button>Play Now</button>
+        </div>
+
+        <div class="game-card" data-category="puzzle">
+            <h3>Logic Riddles</h3>
+            <p>Solve interesting brain teasers.</p>
+            <button>Play Now</button>
+        </div>
+
+    </div>
+
+    <p id="no-results" hidden>No games found.</p>
+
+</section>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>About PuzzleVerse</h2>
+
+            <p>
+                PuzzleVerse is a platform where learning
+                meets entertainment through quizzes,
+                puzzles and brain games.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 PuzzleVerse. Play. Think. Challenge Yourself.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
