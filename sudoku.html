@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PuzzleVerse | Sudoku</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">PuzzleVerse</div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#games">Games</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <main class="sudoku-page">
+
+        <section class="sudoku-container">
+
+            <h1>Sudoku Challenge</h1>
+
+            <p class="sudoku-subtitle">
+                Test your logic and complete the 9 × 9 grid!
+            </p>
+
+            <!-- Game Settings -->
+            <div id="sudoku-settings">
+
+                <h2>Choose Your Challenge</h2>
+
+                <label for="difficulty">Difficulty</label>
+
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <label for="mistake-mode">Mistake Mode</label>
+
+                <select id="mistake-mode">
+                    <option value="unlimited">Unlimited Mistakes</option>
+                    <option value="limited">3 Mistakes Challenge</option>
+                </select>
+
+                <button id="start-sudoku" class="sudoku-btn">
+                    Start Game
+                </button>
+
+            </div>
+
+            <!-- Game Information -->
+            <div id="sudoku-game" hidden>
+
+                <div class="sudoku-info">
+
+                    <p>⏱ Time: <span id="sudoku-timer">00:00</span></p>
+
+                    <p>
+                        ❌ Mistakes:
+                        <span id="mistake-count">0</span>
+                    </p>
+
+                </div>
+
+                <!-- Sudoku Board -->
+                <div id="sudoku-board"></div>
+
+                <!-- Number Buttons -->
+                <div id="number-buttons">
+
+                    <button data-number="1">1</button>
+                    <button data-number="2">2</button>
+                    <button data-number="3">3</button>
+                    <button data-number="4">4</button>
+                    <button data-number="5">5</button>
+                    <button data-number="6">6</button>
+                    <button data-number="7">7</button>
+                    <button data-number="8">8</button>
+                    <button data-number="9">9</button>
+
+                    <button data-number="0">Erase</button>
+
+                </div>
+
+                <!-- Game Controls -->
+                <div class="sudoku-controls">
+
+                    <button id="check-sudoku" class="sudoku-btn">
+                        Check
+                    </button>
+
+                    <button id="hint-sudoku" class="sudoku-btn">
+                        Hint
+                    </button>
+
+                    <button id="restart-sudoku" class="sudoku-btn">
+                        Restart
+                    </button>
+
+                    <button id="new-sudoku" class="sudoku-btn">
+                        New Game
+                    </button>
+
+                </div>
+
+                <p id="sudoku-message"></p>
+
+            </div>
+
+            <!-- Result Screen -->
+            <div id="sudoku-result" hidden>
+
+                <h2 id="result-title">Congratulations!</h2>
+
+                <p id="result-message"></p>
+
+                <button id="play-again" class="sudoku-btn">
+                    Play Again
+                </button>
+
+                <a href="index.html" class="back-link">
+                    Back to Games
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 PuzzleVerse. Play. Think. Challenge Yourself.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="games/sudoku.js"></script>
+
+</body>
+</html>
