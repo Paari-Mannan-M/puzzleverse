@@ -305,6 +305,12 @@ function displayBoard() {
         for (let col = 0; col < SIZE; col++) {
 
             const cell = document.createElement("button");
+            const boxRow = Math.floor(row / 3);
+            const boxCol = Math.floor(col / 3);
+
+            if ((boxRow + boxCol) % 2 === 1) {
+                cell.classList.add("shaded-box");
+            }
 
             cell.type = "button";
             cell.classList.add("sudoku-cell");

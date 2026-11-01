@@ -739,3 +739,12 @@ body.light-theme {
     }
 
 }
+/* Alternate Sudoku 3x3 box shading */
+.sudoku-cell.shaded-box {
+    background-color: #e8eaf5;
+}
+
+/* Dark mode */
+body:not(.light-theme) .sudoku-cell.shaded-box {
+    background-color: #252740;
+}
