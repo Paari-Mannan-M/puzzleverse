@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 | PuzzleVerse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PuzzleVerse</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#games">Games</a>
+            <a href="index.html#about">About</a>
+        </div>
+
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <main class="game-page">
+        <div class="game-container">
+
+            <h1>2048</h1>
+            <p class="game-subtitle">
+                Combine matching numbers and reach 2048!
+            </p>
+
+            <div class="game-score-container">
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="score-box">
+                    <span>Best</span>
+                    <strong id="best-score">0</strong>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button id="new-game">New Game</button>
+                <button id="restart-game">Restart</button>
+            </div>
+
+            <div id="game-board" class="game-board">
+                <!-- 2048 tiles will be created using JavaScript -->
+            </div>
+
+            <p id="game-message" class="game-message">
+                Use your arrow keys to move the tiles.
+            </p>
+
+            <div class="game-instructions">
+                <h3>How to Play</h3>
+                <p>
+                    Use the arrow keys to move all tiles.
+                    Matching numbers combine into one tile.
+                    Reach 2048 to win!
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="games/2048.js"></script>
+
+</body>
+</html>
