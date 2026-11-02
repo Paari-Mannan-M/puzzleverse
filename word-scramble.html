@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble | PuzzleVerse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">PuzzleVerse</a>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                Toggle Theme
+            </button>
+        </div>
+    </nav>
+
+    <main class="word-scramble-page">
+
+        <div class="word-scramble-container">
+
+            <h1>Word Scramble</h1>
+            <p class="game-subtitle">
+                Unscramble the letters and discover the hidden word!
+            </p>
+
+            <div class="scramble-settings">
+                <label for="scramble-difficulty">Difficulty:</label>
+
+                <select id="scramble-difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <button id="new-scramble-game">
+                    New Game
+                </button>
+            </div>
+
+            <div class="scramble-info">
+
+                <div class="scramble-info-card">
+                    <span>Score</span>
+                    <strong id="scramble-score">0</strong>
+                </div>
+
+                <div class="scramble-info-card">
+                    <span>Time</span>
+                    <strong id="scramble-timer">00:00</strong>
+                </div>
+
+                <div class="scramble-info-card">
+                    <span>Words</span>
+                    <strong id="scramble-progress">0/10</strong>
+                </div>
+
+            </div>
+
+            <section class="scramble-game">
+
+                <p class="scramble-label">Unscramble this word:</p>
+
+                <h2 id="scrambled-word">--------</h2>
+
+                <p id="scramble-hint">
+                    Your hint will appear here.
+                </p>
+
+                <div class="scramble-input-area">
+
+                    <input
+                        type="text"
+                        id="scramble-answer"
+                        placeholder="Enter your answer"
+                        autocomplete="off"
+                        maxlength="15"
+                    >
+
+                    <button id="check-scramble-answer">
+                        Submit
+                    </button>
+
+                </div>
+
+                <div class="scramble-actions">
+                    <button id="scramble-hint-button">
+                        Get Hint
+                    </button>
+
+                    <button id="skip-scramble-word">
+                        Skip Word
+                    </button>
+                </div>
+
+                <p id="scramble-message">
+                    Enter the correct word to earn points!
+                </p>
+
+            </section>
+
+            <section class="scramble-result" id="scramble-result" hidden>
+
+                <h2>Game Completed!</h2>
+
+                <p>Your final score:</p>
+
+                <strong id="scramble-final-score">0</strong>
+
+                <p id="scramble-final-message"></p>
+
+                <button id="scramble-play-again">
+                    Play Again
+                </button>
+
+            </section>
+
+            <div class="scramble-instructions">
+                <h3>How to Play</h3>
+
+                <ul>
+                    <li>Look at the scrambled letters.</li>
+                    <li>Use the hint if you need help.</li>
+                    <li>Type the correct word and submit.</li>
+                    <li>Each correct answer earns points.</li>
+                    <li>Complete all 10 words to finish the game.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="games/word-scramble.js"></script>
+
+</body>
+</html>

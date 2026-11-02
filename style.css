@@ -1505,3 +1505,255 @@ body:not(.light-theme) .sudoku-cell.shaded-box {
         border-radius: 4px;
     }
 }
+
+/* ==============================
+   WORD SCRAMBLE GAME
+================================ */
+
+.word-scramble-page {
+    min-height: 100vh;
+    padding: 35px 20px;
+}
+
+.word-scramble-container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.word-scramble-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.game-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* Difficulty settings */
+
+.scramble-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.scramble-settings select,
+.scramble-settings button {
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.scramble-settings select {
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.scramble-settings select option {
+    background-color: black;
+    color: #f1eeee;
+}
+
+.scramble-settings button {
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+/* Game statistics */
+
+.scramble-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.scramble-info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.scramble-info-card span {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.scramble-info-card strong {
+    font-size: 22px;
+}
+
+/* Main game area */
+
+.scramble-game {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    margin-bottom: 25px;
+}
+
+.scramble-label {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+#scrambled-word {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    letter-spacing: 8px;
+    color: var(--primary-color);
+    margin: 20px 0;
+    overflow-wrap: anywhere;
+}
+
+#scramble-hint {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+/* Answer input */
+
+.scramble-input-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+.scramble-input-area input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.scramble-input-area button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+/* Hint and skip buttons */
+
+.scramble-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.scramble-actions button,
+#scramble-play-again {
+    padding: 10px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#scramble-message {
+    margin-top: 22px;
+    font-weight: 600;
+    min-height: 24px;
+}
+
+/* Results */
+
+.scramble-result {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    margin-bottom: 25px;
+}
+
+.scramble-result h2 {
+    margin-bottom: 15px;
+}
+
+#scramble-final-score {
+    display: block;
+    font-size: 42px;
+    color: var(--primary-color);
+    margin: 15px 0;
+}
+
+#scramble-play-again {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    margin-top: 15px;
+}
+
+/* Instructions */
+
+.scramble-instructions {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 22px;
+    text-align: left;
+}
+
+.scramble-instructions h3 {
+    margin-bottom: 12px;
+}
+
+.scramble-instructions ul {
+    padding-left: 22px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .word-scramble-page {
+        padding: 25px 12px;
+    }
+
+    .scramble-info {
+        gap: 8px;
+    }
+
+    .scramble-info-card {
+        padding: 12px 6px;
+    }
+
+    .scramble-info-card strong {
+        font-size: 18px;
+    }
+
+    .scramble-input-area {
+        flex-direction: column;
+    }
+
+    .scramble-input-area button {
+        width: 100%;
+    }
+
+    #scrambled-word {
+        letter-spacing: 4px;
+    }
+}
