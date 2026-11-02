@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match | PuzzleVerse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">PuzzleVerse</a>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+
+    <main class="memory-page">
+        <div class="memory-container">
+
+            <h1>Memory Match</h1>
+            <p class="memory-subtitle">
+                Find all matching pairs and test your memory!
+            </p>
+
+            <div class="memory-settings">
+                <label for="memory-difficulty">Difficulty:</label>
+                <select id="memory-difficulty">
+                    <option value="easy">Easy (4 × 4)</option>
+                    <option value="medium">Medium (4 × 5)</option>
+                    <option value="hard">Hard (6 × 6)</option>
+                </select>
+
+                <button id="memory-new-game">New Game</button>
+            </div>
+
+            <div class="memory-info">
+                <div class="memory-stat">
+                    <span>Moves</span>
+                    <strong id="memory-moves">0</strong>
+                </div>
+
+                <div class="memory-stat">
+                    <span>Matches</span>
+                    <strong id="memory-matches">0</strong>
+                </div>
+
+                <div class="memory-stat">
+                    <span>Time</span>
+                    <strong id="memory-timer">00:00</strong>
+                </div>
+
+                <div class="memory-stat">
+                    <span>Best Score</span>
+                    <strong id="memory-best-score">0</strong>
+                </div>
+            </div>
+
+            <div id="memory-grid" class="memory-grid"></div>
+
+            <p id="memory-message" class="memory-message">
+                Find two matching cards to begin!
+            </p>
+
+            <section id="memory-result" class="memory-result" hidden>
+                <h2>Congratulations!</h2>
+                <p id="memory-final-message"></p>
+                <button id="memory-play-again">Play Again</button>
+            </section>
+
+            <div class="memory-instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Click or tap a card to reveal it.</li>
+                    <li>Find two cards with the same symbol.</li>
+                    <li>Matching cards remain visible.</li>
+                    <li>Find all pairs to win the game.</li>
+                    <li>Complete the game with fewer moves and less time.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="games/memory-match.js"></script>
+
+</body>
+</html>

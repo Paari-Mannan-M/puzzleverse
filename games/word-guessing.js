@@ -305,12 +305,3 @@ guessPlayAgainButton.addEventListener("click", startGuessGame);
 
 // Start the first game
 startGuessGame();
-
-// Physical keyboard support (A-Z)
-document.addEventListener("keydown", function(event) {
-    const letter = event.key.toUpperCase();
-
-    if (/^[A-Z]$/.test(letter)) {
-        handleGuess(letter);
-    }
-});
