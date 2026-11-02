@@ -1241,3 +1241,267 @@ body:not(.light-theme) .sudoku-cell.shaded-box {
         padding: 13px 8px;
     }
 }
+
+/* =================================
+   WORD SEARCH GAME
+================================= */
+
+.word-search-page {
+    min-height: 85vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.word-search-container {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+.word-search-container h1 {
+    font-size: 2.6rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.word-search-subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+}
+
+/* Settings */
+
+.word-search-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.word-search-settings label {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.word-search-settings select,
+.word-search-settings button {
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.word-search-settings select {
+    background: var(--card-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.word-search-settings button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Information cards */
+
+.word-search-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.word-info-box {
+    padding: 14px;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.word-info-box span {
+    display: block;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.word-info-box strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+/* Main layout */
+
+.word-search-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px;
+    gap: 20px;
+    align-items: start;
+}
+
+/* Letter grid */
+
+.word-grid {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 5px;
+    padding: 12px;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    user-select: none;
+    touch-action: none;
+}
+
+.word-cell {
+    aspect-ratio: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: clamp(0.7rem, 2.5vw, 1.1rem);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.word-cell.selected {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.word-cell.found {
+    background: #16a34a;
+    color: white;
+    border-color: #16a34a;
+}
+
+/* Word list */
+
+.word-list-container {
+    padding: 16px;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    text-align: left;
+}
+
+.word-list-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.word-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.word-item {
+    padding: 8px 10px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+.word-item.found {
+    color: #16a34a;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* Message and buttons */
+
+.word-message {
+    min-height: 25px;
+    margin: 20px 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+#word-play-again {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#word-play-again:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* Instructions */
+
+.word-instructions {
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.word-instructions h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.word-instructions p {
+    color: var(--secondary-color);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 650px) {
+    .word-search-page {
+        padding: 25px 10px;
+    }
+
+    .word-search-container h1 {
+        font-size: 2rem;
+    }
+
+    .word-search-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .word-list-container {
+        width: 100%;
+    }
+
+    .word-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .word-grid {
+        gap: 3px;
+        padding: 7px;
+    }
+
+    .word-cell {
+        border-radius: 4px;
+    }
+}
