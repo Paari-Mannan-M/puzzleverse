@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guessing | PuzzleVerse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">PuzzleVerse</a>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                Toggle Theme
+            </button>
+        </div>
+    </nav>
+
+    <main class="word-guess-page">
+
+        <div class="word-guess-container">
+
+            <h1>Word Guessing</h1>
+            <p class="game-subtitle">
+                Guess the hidden word one letter at a time!
+            </p>
+
+            <div class="word-guess-settings">
+
+                <label for="guess-difficulty">Difficulty:</label>
+
+                <select id="guess-difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <button id="new-guess-game">New Game</button>
+
+            </div>
+
+            <div class="word-guess-info">
+
+                <div class="word-guess-info-card">
+                    <span>Score</span>
+                    <strong id="guess-score">0</strong>
+                </div>
+
+                <div class="word-guess-info-card">
+                    <span>Attempts Left</span>
+                    <strong id="guess-attempts">6</strong>
+                </div>
+
+                <div class="word-guess-info-card">
+                    <span>Words Solved</span>
+                    <strong id="guess-progress">0/10</strong>
+                </div>
+
+            </div>
+
+            <section class="word-guess-game">
+
+                <p class="guess-category">
+                    Category: <strong id="guess-category">Animals</strong>
+                </p>
+
+                <p class="guess-instruction">
+                    Find the hidden word:
+                </p>
+
+                <div id="guess-word" class="guess-word">
+                    _ _ _ _ _
+                </div>
+
+                <p id="guess-hint" class="guess-hint">
+                    Your hint will appear here.
+                </p>
+
+                <h3>Choose a Letter</h3>
+
+                <div id="guess-keyboard" class="guess-keyboard">
+                </div>
+
+                <p id="guess-message" class="guess-message">
+                    Select a letter to begin!
+                </p>
+
+                <button id="next-guess-word" hidden>
+                    Next Word
+                </button>
+
+            </section>
+
+            <section class="guess-result" id="guess-result" hidden>
+
+                <h2>Game Completed!</h2>
+
+                <p>Your final score:</p>
+
+                <strong id="guess-final-score">0</strong>
+
+                <p id="guess-final-message"></p>
+
+                <button id="guess-play-again">
+                    Play Again
+                </button>
+
+            </section>
+
+            <div class="guess-instructions">
+                <h3>How to Play</h3>
+
+                <ul>
+                    <li>Look at the category and hint.</li>
+                    <li>Select letters to reveal the hidden word.</li>
+                    <li>Correct guesses reveal matching letters.</li>
+                    <li>Incorrect guesses reduce your attempts.</li>
+                    <li>Find the word before your attempts run out.</li>
+                    <li>Complete 10 words to finish the game.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="games/word-guessing.js"></script>
+
+</body>
+</html>
