@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Riddles | PuzzleVerse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">PuzzleVerse</a>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+
+    <main class="riddles-page">
+        <div class="riddles-container">
+
+            <h1>Logic Riddles</h1>
+            <p class="riddles-subtitle">
+                Challenge your brain with interesting logic puzzles!
+            </p>
+
+            <!-- Difficulty Settings -->
+            <div class="riddles-settings">
+                <label for="riddle-difficulty">Difficulty:</label>
+
+                <select id="riddle-difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <button id="riddle-new-game">New Game</button>
+            </div>
+
+            <!-- Game Statistics -->
+            <div class="riddles-info">
+
+                <div class="riddle-stat">
+                    <span>Score</span>
+                    <strong id="riddle-score">0</strong>
+                </div>
+
+                <div class="riddle-stat">
+                    <span>Question</span>
+                    <strong id="riddle-progress">0 / 10</strong>
+                </div>
+
+                <div class="riddle-stat">
+                    <span>Correct</span>
+                    <strong id="riddle-correct">0</strong>
+                </div>
+
+                <div class="riddle-stat">
+                    <span>Time</span>
+                    <strong id="riddle-timer">00:00</strong>
+                </div>
+
+            </div>
+
+            <!-- Riddle Game -->
+            <section id="riddle-game" class="riddle-game">
+
+                <div class="riddle-category">
+                    <span id="riddle-category">General Logic</span>
+                </div>
+
+                <h2 id="riddle-question">
+                    Your riddle will appear here.
+                </h2>
+
+                <div id="riddle-options" class="riddle-options">
+                    <!-- Options generated using JavaScript -->
+                </div>
+
+                <div class="riddle-hint-area">
+                    <button id="riddle-hint-button">
+                        Show Hint
+                    </button>
+
+                    <p id="riddle-hint" hidden></p>
+                </div>
+
+                <p id="riddle-message" class="riddle-message">
+                    Choose the correct answer!
+                </p>
+
+                <button id="riddle-next-button" hidden>
+                    Next Question
+                </button>
+
+            </section>
+
+            <!-- Result Section -->
+            <section id="riddle-result" class="riddle-result" hidden>
+
+                <h2>Challenge Completed!</h2>
+
+                <p id="riddle-final-score"></p>
+                <p id="riddle-final-message"></p>
+
+                <button id="riddle-play-again">
+                    Play Again
+                </button>
+
+            </section>
+
+            <!-- Instructions -->
+            <div class="riddles-instructions">
+
+                <h3>How to Play</h3>
+
+                <ul>
+                    <li>Choose your preferred difficulty.</li>
+                    <li>Answer 10 randomly selected riddles.</li>
+                    <li>Read each question carefully.</li>
+                    <li>Use hints when you need help.</li>
+                    <li>Earn points for correct answers.</li>
+                    <li>Complete all questions to see your result.</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="games/logic-riddles.js"></script>
+
+</body>
+</html>
