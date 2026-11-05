@@ -3080,3 +3080,51 @@ body.light-theme .game-card.game-2048 {
         ),
         url("images/2048-bg.webp");
 }
+/* NUMBER SEQUENCE ANIME BACKGROUND */
+
+.game-card.game-sequence {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.62),
+            rgba(15, 15, 30, 0.72)
+        ),
+        url("images/number-sequence-bg.jpg");
+
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-card.game-sequence h3,
+.game-card.game-sequence p {
+    color: white;
+}
+
+.game-card.game-sequence .game-tag {
+    color: white;
+}
+
+.game-card.game-sequence .play-link {
+    color: white;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.game-card.game-sequence .play-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* LIGHT MODE */
+
+body.light-theme .game-card.game-sequence {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.25),
+            rgba(15, 15, 30, 0.38)
+        ),
+        url("images/number-sequence-bg.jpg");
+}
