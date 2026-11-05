@@ -2498,3 +2498,52 @@ body:not(.light-theme) .sudoku-cell.shaded-box {
         font-size: 1.1rem;
     }
 }
+
+/* Quiz Filters */
+
+.quiz-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.filter-group select {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 15px;
+    width: 100%;
+}
+
+#filter-count {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+    text-align: center;
+}
+/* Quiz Filter Dropdown Fix */
+
+.quiz-filters select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.quiz-filters select option {
+    background-color: white;
+    color: #171729;
+}

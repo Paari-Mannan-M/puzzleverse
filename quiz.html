@@ -45,6 +45,29 @@
                     Answer 10 multiple-choice questions.
                     You have 15 seconds for each question.
                 </p>
+                <!-- Quiz Filters -->
+            <div class="quiz-filters">
+
+                <div class="filter-group">
+                    <label for="category-filter">Choose Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="difficulty-filter">Choose Difficulty:</label>
+                    <select id="difficulty-filter">
+                        <option value="all">All Difficulties</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+
+                <p id="filter-count"></p>
+
+            </div>
 
                 <button id="start-btn" class="quiz-btn">
                     Start Quiz
