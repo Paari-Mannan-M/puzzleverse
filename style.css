@@ -3128,3 +3128,52 @@ body.light-theme .game-card.game-sequence {
         ),
         url("images/number-sequence-bg.jpg");
 }
+
+/* WORD SEARCH ANIME BACKGROUND */
+
+.game-card.game-word-search {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.55),
+            rgba(15, 15, 30, 0.68)
+        ),
+        url("images/word-search-bg.jpg");
+
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-card.game-word-search h3,
+.game-card.game-word-search p {
+    color: white;
+}
+
+.game-card.game-word-search .game-tag {
+    color: white;
+}
+
+.game-card.game-word-search .play-link {
+    color: white;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.game-card.game-word-search .play-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* WORD SEARCH - LIGHT MODE */
+
+body.light-theme .game-card.game-word-search {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.25),
+            rgba(15, 15, 30, 0.38)
+        ),
+        url("images/word-search-bg.jpg");
+}
