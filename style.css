@@ -3369,3 +3369,51 @@ body.light-theme .game-card.game-memory {
         ),
         url("images/memory-match-bg.jpg");
 }
+/* LOGIC RIDDLES ANIME BACKGROUND */
+
+.game-card.game-riddles {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.55),
+            rgba(15, 15, 30, 0.68)
+        ),
+        url("images/logic-riddles-bg.jpg");
+
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-card.game-riddles h3,
+.game-card.game-riddles p {
+    color: white;
+}
+
+.game-card.game-riddles .game-tag {
+    color: white;
+}
+
+.game-card.game-riddles .play-link {
+    color: white;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.game-card.game-riddles .play-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* LOGIC RIDDLES - LIGHT MODE */
+
+body.light-theme .game-card.game-riddles {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.25),
+            rgba(15, 15, 30, 0.38)
+        ),
+        url("images/logic-riddles-bg.jpg");
+}
