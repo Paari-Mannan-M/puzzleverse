@@ -3177,3 +3177,51 @@ body.light-theme .game-card.game-word-search {
         ),
         url("images/word-search-bg.jpg");
 }
+/* WORD SCRAMBLE ANIME BACKGROUND */
+
+.game-card.game-scramble {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.55),
+            rgba(15, 15, 30, 0.68)
+        ),
+        url("images/word-scramble-bg.jpg");
+
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-card.game-scramble h3,
+.game-card.game-scramble p {
+    color: white;
+}
+
+.game-card.game-scramble .game-tag {
+    color: white;
+}
+
+.game-card.game-scramble .play-link {
+    color: white;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.game-card.game-scramble .play-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* WORD SCRAMBLE - LIGHT MODE */
+
+body.light-theme .game-card.game-scramble {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.25),
+            rgba(15, 15, 30, 0.38)
+        ),
+        url("images/word-scramble-bg.jpg");
+}
