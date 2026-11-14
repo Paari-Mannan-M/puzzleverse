@@ -3321,3 +3321,51 @@ body.light-theme .game-card.game-quiz {
         ),
         url("images/General-Knowledge-bg.jpg");
 }
+/* MEMORY MATCH ANIME BACKGROUND */
+
+.game-card.game-memory {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.55),
+            rgba(15, 15, 30, 0.68)
+        ),
+        url("images/memory-match-bg.jpg");
+
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-card.game-memory h3,
+.game-card.game-memory p {
+    color: white;
+}
+
+.game-card.game-memory .game-tag {
+    color: white;
+}
+
+.game-card.game-memory .play-link {
+    color: white;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.game-card.game-memory .play-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* MEMORY MATCH - LIGHT MODE */
+
+body.light-theme .game-card.game-memory {
+    background-image:
+        linear-gradient(
+            rgba(15, 15, 30, 0.25),
+            rgba(15, 15, 30, 0.38)
+        ),
+        url("images/memory-match-bg.jpg");
+}
