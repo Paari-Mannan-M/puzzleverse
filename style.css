@@ -3496,3 +3496,209 @@ body.light-theme .hero-highlights span {
         border-radius: 18px;
     }
 }
+
+/* ==========================================
+   SUDOKU VISUAL UPGRADE - PHASE 6
+========================================== */
+
+/* Main Sudoku Container */
+
+.sudoku-container {
+    max-width: 700px;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
+}
+
+.sudoku-container h1 {
+    font-size: clamp(27px, 5vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* Game Information Cards */
+
+.sudoku-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    background: transparent;
+    padding: 0;
+}
+
+.sudoku-info p {
+    padding: 15px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+/* Sudoku Board */
+
+#sudoku-board {
+    max-width: 520px;
+    border: 3px solid var(--primary-color);
+    border-radius: 9px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* Sudoku Cells */
+
+.sudoku-cell {
+    font-size: clamp(15px, 3.5vw, 23px);
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.15s ease, color 0.15s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Fixed Numbers */
+
+.sudoku-cell.fixed {
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+/* User Numbers */
+
+.sudoku-cell.user-filled {
+    color: #0ea5e9;
+    font-weight: 700;
+}
+
+/* Alternate 3x3 Box Shading */
+
+.sudoku-cell.shaded-box {
+    background-color: rgba(139, 92, 246, 0.07);
+}
+
+body:not(.light-theme) .sudoku-cell.shaded-box {
+    background-color: rgba(139, 92, 246, 0.12);
+}
+
+/* Related Cells */
+
+.sudoku-cell.related {
+    background-color: rgba(139, 92, 246, 0.16);
+}
+
+/* Selected Cell */
+
+.sudoku-cell.selected {
+    background-color: rgba(139, 92, 246, 0.38);
+    outline: 2px solid #8b5cf6;
+    outline-offset: -2px;
+    z-index: 1;
+}
+
+/* Matching Numbers */
+
+.sudoku-cell.same-number {
+    background-color: rgba(34, 197, 94, 0.25);
+}
+
+/* Conflicting Numbers */
+
+.sudoku-cell.conflict {
+    background-color: rgba(239, 68, 68, 0.25);
+    color: #ef4444;
+}
+
+/* Number Buttons */
+
+#number-buttons {
+    gap: 10px;
+}
+
+#number-buttons button {
+    min-height: 48px;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+#number-buttons button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 14px rgba(139, 92, 246, 0.25);
+}
+
+/* Game Controls */
+
+.sudoku-controls {
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.sudoku-btn {
+    border-radius: 11px;
+    padding: 13px 23px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* Game Message */
+
+#sudoku-message {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Result Screen */
+
+#sudoku-result {
+    padding: 35px 15px;
+}
+
+#sudoku-result h2 {
+    font-size: 30px;
+}
+
+/* Mobile Improvements */
+
+@media (max-width: 600px) {
+
+    .sudoku-container {
+        padding: 22px 12px;
+        border-radius: 16px;
+    }
+
+    #sudoku-board {
+        border-width: 2px;
+    }
+
+    .sudoku-info {
+        gap: 8px;
+    }
+
+    .sudoku-info p {
+        padding: 12px 5px;
+        font-size: 13px;
+    }
+
+    #number-buttons {
+        gap: 6px;
+    }
+
+    #number-buttons button {
+        min-height: 43px;
+        font-size: 17px;
+    }
+}
+/* Sudoku number colours */
+
+body.light-theme .sudoku-cell.fixed,
+body.light-theme .sudoku-cell.user-filled {
+    color: #171729 !important;
+}
+
+body:not(.light-theme) .sudoku-cell.fixed,
+body:not(.light-theme) .sudoku-cell.user-filled {
+    color: #ffffff !important;
+}

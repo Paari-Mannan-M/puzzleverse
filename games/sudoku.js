@@ -9,7 +9,6 @@ const gameScreen = document.getElementById("sudoku-game");
 const resultScreen = document.getElementById("sudoku-result");
 
 const difficultySelect = document.getElementById("difficulty");
-const mistakeModeSelect = document.getElementById("mistake-mode");
 
 const startButton = document.getElementById("start-sudoku");
 const restartButton = document.getElementById("restart-sudoku");
@@ -39,7 +38,6 @@ let timerInterval = null;
 let gameActive = false;
 
 let difficulty = "easy";
-let mistakeMode = "unlimited";
 
 const SIZE = 9;
 
@@ -446,7 +444,6 @@ function enterNumber(number) {
     }
 
     // Check whether entered number is correct
-
     if (number !== solution[row][col]) {
 
         mistakes++;
@@ -455,7 +452,13 @@ function enterNumber(number) {
 
         messageDisplay.textContent = "Incorrect number. Try again!";
 
-        if (mistakeMode === "limited" && mistakes >= 3) {
+        // Vibrate on supported mobile devices
+        if ("vibrate" in navigator) {
+            navigator.vibrate(200);
+        }
+
+        // Always allow only 3 mistakes
+        if (mistakes >= 3) {
             endGame(false);
         }
 
@@ -578,11 +581,29 @@ function updateTimer() {
 // ==========================================
 // START GAME
 // ==========================================
-
 function startGame() {
 
-    difficulty = difficultySelect.value;
-    mistakeMode = mistakeModeSelect.value;
+    const params = new URLSearchParams(window.location.search);
+
+    // Settings page: open the game in a new tab
+    if (params.get("play") !== "1") {
+
+        const gameURL = new URL(window.location.href);
+
+        gameURL.searchParams.set("play", "1");
+        gameURL.searchParams.set("difficulty", difficultySelect.value);
+
+        const newTab = window.open(gameURL.toString(), "_blank");
+
+        if (!newTab) {
+            alert("Please allow pop-ups to open the Sudoku game.");
+        }
+
+        return;
+    }
+
+    // Game tab: initialize the game
+    difficulty = params.get("difficulty") || "easy";
 
     mistakes = 0;
     selectedCell = null;
@@ -602,7 +623,6 @@ function startGame() {
 
     startTimer();
 }
-
 // ==========================================
 // RESTART CURRENT GAME
 // ==========================================
@@ -666,12 +686,9 @@ function newGame() {
 
     clearInterval(timerInterval);
 
-    settingsScreen.hidden = false;
-    gameScreen.hidden = true;
-    resultScreen.hidden = true;
-
     gameActive = false;
-    selectedCell = null;
+
+    window.location.href = "sudoku.html";
 }
 
 // ==========================================
@@ -739,3 +756,10 @@ document.addEventListener("keydown", event => {
     }
 });
 
+// Automatically start the game when opened in the new tab
+
+const pageParams = new URLSearchParams(window.location.search);
+
+if (pageParams.get("play") === "1") {
+    startGame();
+}
